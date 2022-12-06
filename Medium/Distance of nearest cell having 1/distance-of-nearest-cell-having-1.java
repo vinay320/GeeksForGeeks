@@ -37,7 +37,7 @@ class GFG
 class Solution
 {
     //Function to find distance of nearest 1 in the grid for each cell.
-   private boolean isSafe(int[][] grid, int row, int col) {
+    private boolean isSafe(int[][] grid, int row, int col) {
 		if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != -1) {
 			return false;
 		}
