@@ -104,6 +104,7 @@ class GFG {
 
 class Solution {
     // Return the Kth smallest element in the given BST
+    
      public void inorder(ArrayList<Integer>list, Node root){
 
        if(root == null) return;
