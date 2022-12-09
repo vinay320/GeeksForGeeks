@@ -49,8 +49,8 @@ class Compute {
     {
         long ans[]=new long[N-K+1];
     int l=0;
-    for(int i=0;i<N-K+1;i++){
-        for(int j=i;j<i+K&&(i+K)<=N;j++){
+    for(int a=0;a<N-K+1;a++){
+        for(int j=a;j<a+K&&(a+K)<=N;j++){
             if(A[j]<0){
                 ans[l]=A[j];
                 break;
