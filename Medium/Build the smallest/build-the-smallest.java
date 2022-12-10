@@ -26,7 +26,7 @@ class GFG {
 class Solution {
     static String buildLowestNumber(String S, int K) {
         // code here
-        StringBuilder sb = new StringBuilder();
+         StringBuilder sb = new StringBuilder();
         Stack<Integer>st=new Stack<>();
         for(int i=0;i<S.length();i++)
         {
