@@ -38,8 +38,7 @@ class GFG {
 class Solution {
     public boolean canPair(int[] nums, int k) {
         // Code here
-        
-      if(nums.length%2!=0)
+        if(nums.length%2!=0)
         {
             return false;
         }
@@ -50,6 +49,7 @@ class Solution {
         {
             arr[nums[i]%k]++;
         }
+       
         
         if(arr[0]%2!=0 || arr[k/2]%2!=0 )
         {
