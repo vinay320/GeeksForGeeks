@@ -38,6 +38,7 @@ class GFG
 
 class Solution
 {
+   
     int time= 0;
     public ArrayList<Integer> articulationPoints(int V,ArrayList<ArrayList<Integer>> adj)
     {
