@@ -24,8 +24,9 @@ class GFG {
 
 class Solution {
     static String BalancedString(int N) {
-    String s="abcdefghijklmnopqrstuvwxyz";
-    String t="";
+        // code here
+        String s="abcdefghijklmnopqrstuvwxyz";
+        String t="";
         int x=N,sum=0,i;
         if(N>26) 
         {
@@ -64,6 +65,5 @@ class Solution {
                     t+=s.charAt(i);
             }
             return t;
-    
     }
 }
