@@ -25,7 +25,7 @@ class GFG
 class Solution{
     int waysToBreakNumber(int N){
         // code here
-         long m=1000000007;
+        long m=1000000007;
 
         long c=N+1;
 
