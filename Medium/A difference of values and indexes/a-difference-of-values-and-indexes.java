@@ -53,18 +53,19 @@ class Solution{
    
     // Function for finding maximum and value pair
     public static int maxDistance (int arr[], int n) {
+        //Complete the function
         int maxm = arr[0];
         int minm = arr[0];
         int  res = 0;
         for(int i=0; i<n; i++) 
         {
-            res = Math.max(res, Math.max(ma-arr[i], arr[i]-mi)+i);
-            mi = Math.min(mi, arr[i]+i);
-            ma = Math.max(ma, arr[i]-i);
+            res = Math.max(res, Math.max(maxm-arr[i], arr[i]-minm)+i);
+            minm = Math.min(minm, arr[i]+i);
+            maxm = Math.max(maxm, arr[i]-i);
         }
       
         return res;
-    }  
+    }
     
     
 }
