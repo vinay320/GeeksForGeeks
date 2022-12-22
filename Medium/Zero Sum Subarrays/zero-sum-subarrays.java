@@ -38,8 +38,9 @@ class Solution{
     //Function to count subarrays with sum equal to 0.
     public static long findSubarray(long[] arr ,int n) 
     {
-        
-        long count=0;
+        //Your code here
+         long count=0;
+        long sum=0;
         
         Map<Long,Long> m=new HashMap<>();
         m.put((long)0,(long)1);
@@ -47,6 +48,7 @@ class Solution{
         for(int i=0;i<arr.length;i++)
         {
             sum+=arr[i];
+        
             if(m.containsKey(sum))
             {
                 count+=m.get(sum);
@@ -60,5 +62,4 @@ class Solution{
         
         return count;
     }
-
 }
