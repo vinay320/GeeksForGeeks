@@ -54,6 +54,7 @@ class GFG {
 
 // } Driver Code Ends
 
+
 class Solution{
     static int find_nearest_equal_or_greater(int start, int end, int value, int n,
                                       int [][]intervals) {
@@ -78,6 +79,7 @@ class Solution{
             return 0;
         }
 
+        
         if (dp[index] != -1) {
             return dp[index];
         }
