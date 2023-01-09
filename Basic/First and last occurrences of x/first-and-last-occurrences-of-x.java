@@ -15,9 +15,7 @@ class GFG
 {
     ArrayList<Long> find(long arr[], int n, int data)
     {
-        // code here
-        
-    int low = 0;
+          int low = 0;
     int high = arr.length - 1;
     long first_index = -1;
     while (low <= high)
@@ -61,8 +59,8 @@ class GFG
      ArrayList<Long> list = new ArrayList<>();
     list.add(first_index);
     list.add(last_index);
-    return list; 
-        
+    return list;
+
     }
 }
 
