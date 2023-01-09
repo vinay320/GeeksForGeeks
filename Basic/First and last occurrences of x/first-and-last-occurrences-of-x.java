@@ -13,53 +13,56 @@ import java.util.*;
 
 class GFG
 {
-    ArrayList<Long> find(long arr[], int n, int x)
+    ArrayList<Long> find(long arr[], int n, int data)
     {
-          ArrayList<Long> arrlist=new ArrayList<>();
-
-   long first=-1;
-
-long last=-1;
-
-for(int i=0;i<n;i++)
-
-{
-
-if(arr[i]==x)
-
-{
-
-first=i;
-
-break;
-
-}
-
-}
-
-for(int i=n-1;i>=0;i--)
-
-{
-
-if(arr[i]==x)
-
-{
-
-last=i;
-
-break;
-
-}
-
-}
-
-arrlist.add(first);
-
-arrlist.add(last);
-
-return arrlist;
-
-
+        // code here
+        
+    int low = 0;
+    int high = arr.length - 1;
+    long first_index = -1;
+    while (low <= high)
+    {
+      int mid = (low + high) / 2;
+      if (data < arr[mid])
+      {
+        high = mid - 1;
+      }
+      else if (data > arr[mid])
+      {
+        low = mid + 1;
+      }
+      else
+      {
+        first_index = mid; 
+        high = mid - 1; 
+      }
+    }
+    
+     low = 0;
+     high = arr.length - 1;
+    long last_index = -1;
+    while (low <= high)
+    {
+      int mid = (low + high) / 2;
+      if (data < arr[mid])
+      {
+        high = mid - 1;
+      }
+      else if (data > arr[mid])
+      {
+        low = mid + 1;
+      }
+      else
+      {
+        last_index = mid; 
+        low = mid + 1; 
+      }
+    }
+     ArrayList<Long> list = new ArrayList<>();
+    list.add(first_index);
+    list.add(last_index);
+    return list; 
+        
     }
 }
 
