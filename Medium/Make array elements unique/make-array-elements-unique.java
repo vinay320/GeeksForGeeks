@@ -38,12 +38,14 @@ class GFG {
 class Solution {
     public long minIncrements(int[] arr, int N) {
         // Code here
+                // Code here
         Arrays.sort(arr);
         int c=0;
         for(int i=1;i<N;i++)
         {
             if(arr[i]<=arr[i-1])
             {
+                
                 c+=arr[i-1]-arr[i]+1;
                 arr[i]+=arr[i-1]-arr[i]+1;
                 
