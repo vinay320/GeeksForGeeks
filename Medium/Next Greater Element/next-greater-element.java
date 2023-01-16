@@ -35,7 +35,7 @@ class GFG {
 class Solution{
     public static long[] nextLargerElement(long[] arr, int n) { 
         // Your code here
-        long[] ans=new long[n];
+         long[] ans=new long[n];
         ans[n-1]=-1;
         Stack<Integer> s=new Stack<>();
         for(int i=n-1;i>=0;i--)
@@ -56,6 +56,5 @@ class Solution{
         }
         
         return ans;
-        
     } 
 }
