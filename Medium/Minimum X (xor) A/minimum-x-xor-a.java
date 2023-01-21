@@ -30,7 +30,8 @@ class GFG {
 
 class Solution {
     public static int minVal(int a, int b) {
-     int a1=Integer.bitCount(b);
+        // code here
+        int a1=Integer.bitCount(b);
      int b1=Integer.bitCount(a);
      
      int val=0;
@@ -56,5 +57,4 @@ class Solution {
      }
      return val;
     }
-    
 }
