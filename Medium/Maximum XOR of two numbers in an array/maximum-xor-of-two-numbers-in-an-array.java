@@ -35,11 +35,10 @@ class GFG
 
 class Solution
 {
-    public static int max_xor(int[] nums, int n)
+    public static int max_xor(int nums[], int n)
     {
         //code here
         int max = 0;
-    
         
         for (int i = 0; i < n; i++)
         {
