@@ -9,6 +9,7 @@ import java.io.*;
 // } Driver Code Ends
 //User function Template for Java
 
+
 class Solution
 {
     public static String caseSort(String str) 
@@ -65,6 +66,7 @@ class Solution
     }
     
 }
+
 
 //{ Driver Code Starts.
 
