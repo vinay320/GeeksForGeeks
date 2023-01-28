@@ -34,8 +34,7 @@ class Geeks
 
 //User function Template for Java
 
-class Solution{
-       static HashMap<String,Boolean> map=new HashMap<>();
+class Solution{    static HashMap<String,Boolean> map=new HashMap<>();
 
     
 
