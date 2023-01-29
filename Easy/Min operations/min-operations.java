@@ -33,7 +33,7 @@ class GFG {
 class Solution {
     public static int solve(int a, int b) {
         // code here
-        if(a==b)
+         if(a==b)
         {
             return 0;
         }
