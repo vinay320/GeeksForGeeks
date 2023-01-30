@@ -24,13 +24,13 @@ class GFG {
 //User function Template for Java
 
 class Solution {
-    static int minRepeats(String A, String B) 
-    {
-          String C="";
+    static int minRepeats(String A, String B) {
+        // code here
+        String C="";
 
         int temp=0;
-
-        int ans=0;
+int ans=0;
+        
 
         
 
