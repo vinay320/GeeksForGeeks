@@ -36,7 +36,7 @@ class Solution{
        longest subarray with ppositive product */
     int maxLength(int arr[], int n) { 
         //code here
-       int maxLen = 0 , negCount = 0 , prevZero = -1 , firstNeg = -1;
+        int maxLen = 0 , negCount = 0 , prevZero = -1 , firstNeg = -1;
         for(int index = 0 ; index < n ; index++){
             //negative value
             if(arr[index] < 0){
