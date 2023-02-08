@@ -40,18 +40,16 @@ public class GFG {
 
 
 class Solution {
-    long[] countZero(int N, int K, int[][] arr){
+    long[] countZero(int n, int K, int[][] arr){
         // code here
         long[] ans = new long[K];
-        HashSet<Integer> hashc = new HashSet<>();
-        HashSet<Integer> hashr = new HashSet<>();
-        
+        HashSet<Integer> hr = new HashSet<>();
+        HashSet<Integer> hc = new HashSet<>();
         for(int i=0; i<K; i++){
-            hashr.add(arr[i][0]-1);
-            hashc.add(arr[i][1]-1);
-            ans[i]= N*N-(hashr.size()*N+hashc.size()*(N-hashr.size()));
+            hr.add(arr[i][0]-1);
+            hc.add(arr[i][1]-1);
+            ans[i]= n*n-(hr.size()*n+hc.size()*(n-hr.size()));
         }
         return ans;
-        
     }
 }
