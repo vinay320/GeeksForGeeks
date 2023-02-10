@@ -30,7 +30,7 @@ class GFG {
 class Solution {
     public int maxInstance(String s) {
         // Code here
-        Map<Character,Integer> m=new HashMap<>();
+         Map<Character,Integer> m=new HashMap<>();
         for(int i=0;i<s.length();i++)
         {
          
