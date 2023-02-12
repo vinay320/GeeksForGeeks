@@ -60,6 +60,7 @@ class Node{
 }
 */
 
+
 class Solution
 {
     Node primeList(Node head){
