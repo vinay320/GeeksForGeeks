@@ -110,23 +110,29 @@ class Solution
     public static void removeLoop(Node head){
         // code here
         // remove the loop without losing any nodes
-        Node temp=head;
-
-        HashSet<Object> hs=new HashSet<Object>();
-
-        while(temp.next!=null){
-
-            if(hs.contains(temp.next)){
-
-                temp.next=null;
-
+        Node slow=head;
+        Node fast=head;
+        while (slow.next!=null && fast!=null && fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
                 break;
-
-            } 
-
-            hs.add(temp);
-
-            temp=temp.next;
+            }
         }
+        
+        if(slow!=fast)
+        {
+            return;
+        }
+        slow=head;
+        while (slow!=fast)
+        {   slow=slow.next;
+            fast=fast.next;
+        }
+        while(fast.next!=slow)
+        {
+            fast=fast.next;
+        }
+        fast.next=null;
     }
 }
