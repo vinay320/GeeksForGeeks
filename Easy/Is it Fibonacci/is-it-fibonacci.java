@@ -107,24 +107,21 @@ class FastIO
 //User function Template for Java
 
 class Solution {
-    static long solve(int N, int k, ArrayList<Long> G) {
+    static long solve(int N, int K, ArrayList<Long> num) {
         //code here
-       
-       
-       
         long sum=0;
-        for(int i=0;i<G.size();i++)
+        for(long i:num)
         {
-            sum+=G.get(i);
+            sum+=i;
         }
-     
-     for(int curr=k; curr<N; curr++)  {
-            G.add(sum);
-            sum = sum + G.get(curr) - G.get(curr-k);
+        
+        for(int i=K;i<N;i++)
+        {
+            num.add(sum);
+            sum+=num.get(i)-num.get(i-K);
+            
         }
-        return G.get(N-1);   
+        
+        return num.get(N-1);
     }
 }
-
-// 6
-// 0 1 2 3 6 
