@@ -15,8 +15,7 @@ class GFG {
 		    String inputLine[] = br.readLine().trim().split(" ");
 		    long[] arr = new long[n];
 		    for(int i=0; i<n; i++)arr[i]=Long.parseLong(inputLine[i]);
-		    Solution ob = new Solution();
-		    long[] res = ob.nextLargerElement(arr, n);
+		    long[] res = new Solution().nextLargerElement(arr, n);
 		    for (int i = 0; i < n; i++) 
 		        System.out.print(res[i] + " ");
 		    System.out.println();
@@ -30,29 +29,25 @@ class GFG {
 // } Driver Code Ends
 
 
-// User Function Template for JAVA
-
-class Solution{
-    public static long[] nextLargerElement(long[] arr, int n) { 
+class Solution
+{
+    //Function to find the next greater element for each element of the array.
+    public static long[] nextLargerElement(long[] arr, int n)
+    { 
         // Your code here
-         long[] ans=new long[n];
-        ans[n-1]=-1;
+        long[] ans=new long[n];
         Stack<Integer> s=new Stack<>();
-        for(int i=n-1;i>=0;i--)
+        for(int i=0;i<n;i++)
         {
-            while(!s.empty() && arr[i]>=arr[s.peek()])
+            while(!s.isEmpty() && arr[i]>arr[s.peek()])
             {
-                s.pop();
-            }
-            if(s.empty())
-            {
-                ans[i]=-1;
-            }
-            else
-            {
-                ans[i]=arr[s.peek()];
+                ans[s.pop()]=arr[i];
             }
             s.push(i);
+        }
+        while(s.size()>0)
+        {
+            ans[s.pop()]=-1;
         }
         
         return ans;
