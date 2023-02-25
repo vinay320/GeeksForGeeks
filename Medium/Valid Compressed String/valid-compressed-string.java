@@ -27,10 +27,8 @@ class Solution {
         return ch>='0' && ch<='9';
     }
     
-    static int checkCompressed(String S, String T) 
-    {
-        int i = 0;
-        int j = 0;
+    static int checkCompressed(String S, String T) {
+        int i = 0, j = 0;
         
         int n = S.length();
         int m = T.length();
