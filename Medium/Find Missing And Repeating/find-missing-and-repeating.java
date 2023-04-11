@@ -32,49 +32,61 @@ class GFG {
 class Solve {
     int[] findTwoElement(int arr[], int n) {
         // code here
-        // Arrays.sort(arr);
-        // HashMap<Integer,Integer> m=new HashMap<>();
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(m.containsKey(arr[i]))
-        //     {
-        //         m.put(arr[i],m.get(arr[i])+1);
-        //     }
-        //     else
-        //     {
-        //         m.put(arr[i],1);
-        //     }
-        // }
-        // int[] ans=new int[2];
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(m.get(arr[i])==2)
-        //     {
-        //         ans[0]=arr[i];
-        //     }
-        // }
-        // for(int i=0;i<n;i++)
-        // {
-        //  if((arr[i]!=(i+1)))
-        //  {
-        //      ans[1]=i+1;
-        //      break;
-        //  }
-        // }
-        
-        // return ans;
-        int[] freq=new int[1000000];
-        
-        int ans[]=new int[2];
-        for(int i=0;i<n;i++) 
-            freq[arr[i]]++;
-        for(int i=1;i<=n;i++){
-            if(freq[i]==0) 
-                ans[1]=i;
-            if(freq[i]>1) 
-                ans[0]=i;
-    }
-    return ans;
+        int xor=arr[0];
+        for(int i=1;i<arr.length;i++)
+        {
+            xor=xor^arr[i];
+        }
+        for(int i=1;i<=n;i++)
+        {
+            xor=xor^i;
+        }
 
+
+        int stbt=xor & ~(xor-1);
+
+        int x=0;
+        int y=0;
+        for(int i=0;i<n;i++)
+        {
+            if((arr[i] & stbt)!=0)
+            {
+                x=x^arr[i];
+            }
+            else
+            {
+                y=y^arr[i];
+            }
+        }
+        for(int i=1;i<=n;i++)
+        {
+            if((i & stbt)!=0)
+            {
+                x=x^i;
+            }
+            else
+            {
+                y=y^i;
+            }
+        }
+        int[] arr1=new int[2];
+        
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]==x)
+            {
+                arr1[0]=x;
+                arr1[1]=y;
+                break;
+            }
+            if(arr[i]==y)
+            {
+                arr1[0]=y;
+                arr1[1]=x;
+                break;
+            }
+        }
+        
+        return arr1;
     }
 }
