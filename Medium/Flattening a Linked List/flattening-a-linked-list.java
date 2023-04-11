@@ -117,61 +117,49 @@ class Node
 */
 /*  Function which returns the  root of 
     the flattened linked list. */
+    
 class GfG
 {
+    static Node merge(Node x,Node y)
+    {
+        Node tmp=new Node(0);
+        Node ans=tmp;
+        
+        while(x!=null && y!=null)
+        {
+            if(x.data<=y.data)
+            {
+                tmp.bottom=x;
+               
+                x=x.bottom;
+            }
+            else
+            {
+                tmp.bottom=y;
+               
+                y=y.bottom;
+            }
+             tmp=tmp.bottom;
+        }
+        
+        if(x!= null) 
+            {
+                tmp.bottom = x; 
+            }
+        else 
+           {
+                tmp.bottom = y;
+           }
+        return ans.bottom; 
+    }
     Node flatten(Node root)
     {
 	// Your code here
-	 if(root== null)return null;
-
-   
-
-   
-
-   return merge(root,flatten(root.next));
-
-    }
-
-    Node merge(Node head1,Node head2){
-
-       
-
-        
-
-        Node dummy = new Node(0);
-
-        Node temp= dummy;
-
-        
-
-        while(head1!= null && head2 != null){
-
-            if(head1.data<head2.data){
-
-                temp.bottom = head1;
-
-                temp = temp.bottom;
-
-                head1 = head1.bottom;
-
-            }else{
-
-                temp.bottom = head2;
-
-                temp = temp.bottom;
-
-                head2 = head2.bottom;
-
-            }
-
-        }
-
-        if(head1 != null)temp.bottom = head1;
-
-        if(head2 != null)temp.bottom = head2;
-
-        
-
-        return dummy.bottom;
+	if (root == null || root.next == null) 
+                return root; 
+      
+            
+            return merge(root,flatten(root.next));
+	
     }
 }
